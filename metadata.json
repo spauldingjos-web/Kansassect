@@ -1,0 +1,6 @@
+{
+  "name": "SectionLine KS — Tactical Hunting GIS & Permission Platform",
+  "description": "High-contrast hunting parcel map, landowner permission black book, AI E-Scout terrain analyzer, offline county pack manager, and crew coordination suite.",
+  "requestFramePermissions": ["geolocation", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

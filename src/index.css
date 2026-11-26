@@ -1,0 +1,130 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* SectionLine KS — Woodland Deer & Turkey Camo + Hunter Blaze Palette */
+    --bg-bark: #0c0f0a;
+    --bg-moss: #141911;
+    --bg-olive: #1d2518;
+    --bg-sage: #283322;
+    --border-twig: #2d3826;
+    --text-bone: #f4f1ea;
+    --text-khaki: #b7ad96;
+    --accent-blaze: #ea580c;
+    --accent-pine: #3f7d20;
+    --accent-bronze: #9a7248;
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #0c0f0a;
+    color: #f4f1ea;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+
+  h1, h2, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+
+  .font-mono, .tabular-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Authentic dark woodland deer & turkey camo surface (high-contrast legible overlay) */
+.camo-header {
+  background-color: #141a11;
+  background-image:
+    linear-gradient(180deg, rgba(12, 15, 10, 0.35) 0%, rgba(20, 25, 17, 0.92) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Crect width='240' height='240' fill='%23131810'/%3E%3Cpath d='M12 24c22-14 54-10 68 8 12 16-4 38-26 42-24 5-50-8-52-26-2-10 2-18 10-24z' fill='%23232e1c' opacity='0.72'/%3E%3Cpath d='M138 14c28-8 66 2 78 24 10 18-8 44-34 46-28 2-58-16-60-38-2-14 4-28 16-32z' fill='%23332619' opacity='0.65'/%3E%3Cpath d='M64 82c32-12 72-4 86 20 12 20-12 46-44 48-34 2-64-18-62-42 2-12 8-22 20-26z' fill='%231d2817' opacity='0.8'/%3E%3Cpath d='M174 114c24-10 56-2 64 18 8 18-10 42-36 44-24 2-46-12-48-32-2-14 6-24 20-30z' fill='%233f3422' opacity='0.55'/%3E%3Cpath d='M-10 144c26-14 68-8 82 14 14 22-8 50-38 54-30 4-62-12-60-38 1-14 6-24 16-30z' fill='%232b2116' opacity='0.68'/%3E%3Cpath d='M92 170c28-12 64-4 76 18 10 20-12 44-42 46-32 2-56-16-54-38 2-12 8-20 20-26z' fill='%2325331d' opacity='0.75'/%3E%3Cpath d='M36 60c14-6 30-2 36 8 6 10-4 22-18 24-16 2-28-8-28-18 0-6 4-11 10-14z' fill='%234a3c28' opacity='0.48'/%3E%3Cpath d='M160 66c16-8 36-2 42 10 6 12-6 26-22 28-16 2-30-8-30-20 0-8 4-14 10-18z' fill='%230d120a' opacity='0.85'/%3E%3Cpath d='M110 124c14-6 34-2 40 10 6 12-6 24-22 26-16 2-28-8-28-20 0-6 4-12 10-16z' fill='%230d120a' opacity='0.8'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
+
+/* Subtle dark camo bottom dock & bar backing */
+.camo-dock {
+  background-color: #0e120b;
+  background-image:
+    linear-gradient(180deg, rgba(14, 18, 11, 0.88) 0%, rgba(10, 13, 8, 0.97) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='90' viewBox='0 0 180 90'%3E%3Crect width='180' height='90' fill='%230e120b'/%3E%3Cpath d='M10 15c24-10 52-4 62 12 8 14-10 30-34 32-24 2-44-10-42-26 1-8 6-14 14-18z' fill='%231f2a18' opacity='0.65'/%3E%3Cpath d='M104 20c22-10 54-6 64 12 8 14-8 32-32 34-24 2-46-12-44-28 1-8 4-14 12-18z' fill='%232e2317' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 180px 90px;
+}
+
+/* Native app bottom sheet slide-up transition */
+@keyframes sheetSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-sheet-up {
+  animation: sheetSlideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.touch-scroll-y {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior-y: contain;
+}
+
+/* Custom night vision filter for 5am low-light field operations */
+.night-vision-filter {
+  filter: sepia(100%) hue-rotate(315deg) saturate(380%) brightness(0.82) contrast(1.25);
+}
+
+/* Subtle woodland scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(12, 15, 10, 0.7);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(66, 82, 54, 0.75);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(154, 114, 72, 0.9);
+}
+
+/* Official Kansas Game Warden Permission Slip Print Mode */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-slip-overlay {
+    position: static !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  .print-slip-card {
+    background: #ffffff !important;
+    color: #111111 !important;
+    border: 2px solid #111111 !important;
+    box-shadow: none !important;
+    max-height: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+  }
+}

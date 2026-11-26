@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="rounded">
+      <rect width="512" height="512" rx="108" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#rounded)">
+    <rect width="512" height="512" fill="#141a11" />
+    <path d="M-20 40c65-35 155-20 185 30 28 46-12 105-75 115-65 10-130-24-132-72-2-28 8-52 22-73z" fill="#232e1c" />
+    <path d="M310 10c78-24 175 8 208 68 26 48-20 115-92 122-74 7-155-42-160-100-4-38 12-76 44-90z" fill="#2b2116" />
+    <path d="M120 220c85-32 195-10 232 54 32 54-30 124-116 128-88 4-172-46-168-112 3-32 22-56 52-70z" fill="#1d2817" />
+    <path d="M-10 340c70-36 175-18 210 42 32 54-24 128-105 138-82 10-162-34-156-102 4-36 20-62 51-78z" fill="#332619" />
+    <path d="M320 310c68-28 158-6 184 52 22 50-28 114-98 120-68 6-130-34-134-90-4-38 16-68 48-82z" fill="#25331d" />
+    <!-- Section boundary grid frame -->
+    <rect x="76" y="76" width="360" height="360" rx="44" fill="none" stroke="#65a30d" stroke-width="10" stroke-dasharray="28 18" opacity="0.65" />
+    <!-- Blaze Orange Crosshair Ring -->
+    <circle cx="256" cy="256" r="132" fill="#0c0f0a" fill-opacity="0.72" stroke="#ea580c" stroke-width="22" />
+    <circle cx="256" cy="256" r="68" fill="none" stroke="#f97316" stroke-width="8" opacity="0.85" />
+    <!-- Crosshair ticks -->
+    <line x1="256" y1="88" x2="256" y2="176" stroke="#ea580c" stroke-width="20" stroke-linecap="round" />
+    <line x1="256" y1="336" x2="256" y2="424" stroke="#ea580c" stroke-width="20" stroke-linecap="round" />
+    <line x1="88" y1="256" x2="176" y2="256" stroke="#ea580c" stroke-width="20" stroke-linecap="round" />
+    <line x1="336" y1="256" x2="424" y2="256" stroke="#ea580c" stroke-width="20" stroke-linecap="round" />
+    <!-- Center GPS pinpoint -->
+    <circle cx="256" cy="256" r="24" fill="#f4f1ea" />
+    <circle cx="256" cy="256" r="10" fill="#ea580c" />
+  </g>
+</svg>

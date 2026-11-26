@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "Hunter Account Profile",
+      "description": "Authenticated SectionLine KS hunter account profile storing display name and optional callback phone for SMS permission requests.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID matching the document ID.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Hunter full display name inserted into permission texts, letters, notes, and slips.",
+          "minLength": 2,
+          "maxLength": 80
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Hunter login email address.",
+          "minLength": 3,
+          "maxLength": 160
+        },
+        "phone": {
+          "type": "string",
+          "description": "Optional callback phone number shown on mailed landowner letters.",
+          "minLength": 0,
+          "maxLength": 32
+        },
+        "role": {
+          "type": "string",
+          "description": "Crew role assigned to the account.",
+          "enum": ["hunter"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the hunter account was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the profile was last updated."
+        }
+      },
+      "required": ["uid", "displayName", "email", "role", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private hunter profile documents keyed by Firebase Auth UID. Strictly restricted to the owning authenticated user."
+    }
+  }
+}
